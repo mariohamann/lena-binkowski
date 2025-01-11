@@ -1,5 +1,9 @@
 ---
 import logo from "../assets/logo.svg";
+// There is no other way to get the form out of the fence. :)
+const SUBMIT_FORM_URL = import.meta.env.PROD
+	? "https://submit-form.com/vqj7RZN6R"
+	: "https://submit-form.com/echo";
 ---
 
 <!doctype html>
@@ -16,21 +20,18 @@ import logo from "../assets/logo.svg";
 	</head>
 	<body class='bg-secondary-50 min-h-screen flex flex-col text-lg md:text-xl'>
 		<main
-			class='flex-1 flex flex-col justify-center items-center max-w-[550px] mx-auto px-8 py-12 md:px-12'
+			class='flex-1 flex flex-col justify-center items-center max-w-[550px] mx-auto px-8 py-12 md:px-12 min-h-[70vh]'
 		>
 			<p>
-				Du bist interessiert an meiner Arbeit? Registriere dich und ich
-				schreibe dich <b>einmalig</b> an, sobald es losgeht. Kein Spam, kein
+				Du bist interessiert an meiner Arbeit? Registriere Dich und ich
+				schreibe Dich <b>einmalig</b> an, sobald es losgeht. Kein Spam, kein
 				Newsletter. (<a
 					class='underline underline-offset-2 hover:text-neutral-600'
 					href='https://formspark.io/legal/privacy-policy/'
 					target='_blank'>Datenschutz</a
 				>)
 			</p>
-			<form
-				class='mt-10 w-full'
-				data-url='https://submit-form.com/vqj7RZN6R'
-			>
+			<form class='mt-10 w-full' data-url={SUBMIT_FORM_URL}>
 				<div class='flex gap-x-4'>
 					<label class='sr-only' for='email-address'>Email</label>
 					<input
@@ -50,7 +51,33 @@ import logo from "../assets/logo.svg";
 						>
 					</div>
 				</div>
-			</form>
+			</form><script>
+				document
+					.querySelector("form")
+					.addEventListener("submit", (_event) => {
+						_event.preventDefault();
+						fetch(_event.srcElement.dataset.url, {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+								Accept: "application/json",
+							},
+							body: JSON.stringify({
+								message: _event.target[0].value,
+							}),
+						})
+							.then(() =>
+								window.alert(
+									"Danke für Deine Registrierung! Ich melde mich, sobald es bei mir los geht!"
+								)
+							)
+							.catch(() =>
+								window.alert(
+									"Es gab ein Problem – bitte versuche es später nochmal."
+								)
+							);
+					});
+			</script>
 		</main>
 		<footer class='bg-primary-700 flex-grow-0'>
 			<div
