@@ -1,11 +1,83 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import logo from "../assets/logo.svg";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>
+			Lena Binkowski – Sanftes Empowerment für Frauen und Mädchen mit
+			AD(H)S
+		</title>
+	</head>
+	<body class='bg-secondary-50 min-h-screen flex flex-col text-lg md:text-xl'>
+		<main
+			class='flex-1 flex flex-col justify-center items-center max-w-[550px] mx-auto px-8 py-12 md:px-12'
+		>
+			<p>
+				Du bist interessiert an meiner Arbeit? Registriere dich und ich
+				schreibe dich <b>einmalig</b> an, sobald es losgeht. Kein Spam, kein
+				Newsletter. (<a
+					class='underline underline-offset-2 hover:text-neutral-600'
+					href='https://formspark.io/legal/privacy-policy/'
+					target='_blank'>Datenschutz</a
+				>)
+			</p>
+			<form
+				class='mt-10 w-full'
+				data-url='https://submit-form.com/vqj7RZN6R'
+			>
+				<div class='flex gap-x-4'>
+					<label class='sr-only' for='email-address'>Email</label>
+					<input
+						type='email'
+						autocomplete='email'
+						class='w-full bg-white block border border-neutral-900 focus:ring-2 focus:ring-inset focus:ring-secondary-300 outline-none placeholder:text-gray-400 px-4 py-3 ring-1 ring-inset ring-white rounded-md sm:leading-6 sm:text-base text-gray-900'
+						id='email-address'
+						name='email'
+						placeholder='E-Mail-Adresse...'
+						required=''
+					/><div
+						class='bg-neutral-900 hover:bg-primary-700 rounded-md transition-all'
+					>
+						<button
+							class='font-semibold text-base bg-neutral-900 text-white duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 h-12 hover:-translate-x-1 hover:-translate-y-1 hover:bg-neutral-950 hover:text-white px-4 rounded-md shadow-sm'
+							type='submit'>Registrieren</button
+						>
+					</div>
+				</div>
+			</form>
+		</main>
+		<footer class='bg-primary-700 flex-grow-0'>
+			<div
+				class='max-w-screen-xl mx-auto px-8 py-12 md:p-12 text-white flex justify-between items-center flex-col md:flex-row'
+			>
+				<div class='mb-12 md:mb-0 text-center md:text-left'>
+					<h2 class='font-bold pb-2'>
+						Sanftes Empowerment für Frauen<br />und Mädchen mit
+						AD(H)S
+					</h2>
+					<a
+						href='mailto:mail@lena-binkowski.de'
+						class='hover:underline underline-offset-2 decoration-white/50'
+						>mail@lena-binkowski.de</a
+					>
+				</div>
+				<img src={logo.src} class='h-32 pb-2 -mr-12 md:mr-0' alt='' />
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
