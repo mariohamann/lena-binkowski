@@ -4,6 +4,11 @@ import logo from "../assets/logo.svg";
 const SUBMIT_FORM_URL = import.meta.env.PROD
 	? "https://submit-form.com/vqj7RZN6R"
 	: "https://submit-form.com/echo";
+
+const TRACKING_SCRIPT = import.meta.env.PROD
+	? `<script data-goatcounter="https://lena-binkowski.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`
+	: "";
+
 ---
 
 <!doctype html>
@@ -18,6 +23,7 @@ const SUBMIT_FORM_URL = import.meta.env.PROD
 			Lena Binkowski – Sanftes Empowerment für Frauen und Mädchen mit
 			AD(H)S
 		</title>
+  <Fragment set:html={TRACKING_SCRIPT} />
 	</head>
 	<body class='bg-secondary-50 min-h-screen flex flex-col text-lg md:text-xl'>
 		<main
