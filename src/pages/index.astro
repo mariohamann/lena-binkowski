@@ -8,7 +8,6 @@ const SUBMIT_FORM_URL = import.meta.env.PROD
 const TRACKING_SCRIPT = import.meta.env.PROD
 	? `<script data-goatcounter="https://lena-binkowski.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`
 	: "";
-
 ---
 
 <!doctype html>
@@ -20,9 +19,9 @@ const TRACKING_SCRIPT = import.meta.env.PROD
 		<meta name='generator' content={Astro.generator} />
 		<meta property='og:image' content='/open-graph.jpg' />
 		<title>
-			Lena Binkowski – Sanftes Empowerment für neurodivergente Frauen
+			Lena Binkowski – Sanftes Empowerment für Frauen mit AD(H)S
 		</title>
-  <Fragment set:html={TRACKING_SCRIPT} />
+		<Fragment set:html={TRACKING_SCRIPT} />
 	</head>
 	<body class='bg-secondary-50 min-h-screen flex flex-col text-lg md:text-xl'>
 		<main
@@ -91,7 +90,7 @@ const TRACKING_SCRIPT = import.meta.env.PROD
 			>
 				<div class='mb-12 md:mb-0 text-center md:text-left'>
 					<h2 class='font-bold pb-2'>
-						Sanftes Empowerment für<br />neurodivergente Frauen
+						Sanftes Empowerment<br />für Frauen mit AD(H)S
 					</h2>
 					<a
 						href='mailto:mail@lena-binkowski.de'
